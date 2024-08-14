@@ -1,0 +1,53 @@
+.container {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.date {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 300px;
+  margin: 0 auto; /* 使元素水平居中 */
+  padding: 0px 10px; /* 上、右、下、左内边距 */
+  border: 2px solid #000000;
+  border-width: 3px 0px 0px 0px;
+  border-radius: 8px;
+  font-size: 20px;
+  box-sizing: border-box; /* 使 padding 和 border 包括在元素的总宽度和高度内 */
+}
+
+.textarea::before {
+  content: "";
+  display: block;
+  height: 10px; /* 使字体离边框有距离 */
+}
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.word-count {
+  font-size: 20px;
+  color: #999;
+}
+
+.save-button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
