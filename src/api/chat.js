@@ -62,7 +62,7 @@ export function sendCBTChatMessage(conversationId, userId, userInput) {
     user_input: userInput
   };
 
-  return apiClient.post('/CBT_chat', data)
+  return apiClient.post('/CBT-chat', data)
     .then(response => response.data)
     .catch(error => {
       console.error('Error sending chat message:', error);
@@ -77,7 +77,7 @@ export function sendSocratesChatMessage(conversationId, userId, userInput) {
     user_input: userInput
   };
 
-  return apiClient.post('/Socrates_chat', data)
+  return apiClient.post('/Socrates-chat', data)
     .then(response => response.data)
     .catch(error => {
       console.error('Error sending chat message:', error);
@@ -92,7 +92,7 @@ export function sendMiracleQuestionChatMessage(conversationId, userId, userInput
     user_input: userInput
   };
 
-  return apiClient.post('/miracle_question_chat', data)
+  return apiClient.post('/miracle-question-chat', data)
     .then(response => response.data)
     .catch(error => {
       console.error('Error sending chat message:', error);
