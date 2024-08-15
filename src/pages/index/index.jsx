@@ -32,20 +32,21 @@ export default function Index() {
       />
       <View className='background-image'></View>
       <View className='top-right-buttons'>
-        <Button className='bag-button'>
+        {/*<Button className='bag-button'>*/}
           <Image
-            className='bag'
+            className='bag bag-button'
             src={require("../../asserts/bag.png")}
             mode='aspectFit'
           />
-        </Button>
-        <Button className='date-button' onClick={handleHistoryNavigation}>
+        {/*</Button>*/}
+        {/*<Button className='date-button' onClick={handleHistoryNavigation}>*/}
           <Image
-            className='date'
+            className='date date-button'
             src={require("../../asserts/index_date.png")}
             mode='aspectFit'
+            onClick={handleHistoryNavigation}
           />
-        </Button>
+        {/*</Button>*/}
       </View>
       <Image
         className='cat'
