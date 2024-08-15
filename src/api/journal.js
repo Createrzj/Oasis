@@ -1,5 +1,7 @@
+import { apiClient } from "./requests"
+
 // 定义一个函数来保存日记，并返回结果
-function saveDiary(userId, diaryContent) {
+export function saveDiary(userId, diaryContent) {
   const data = {
     user_id: userId,
     diary_content: diaryContent
