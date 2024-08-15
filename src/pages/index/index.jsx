@@ -6,20 +6,30 @@ export default function Index() {
   // Function to handle navigation to the "记录日记" page
   const handleJournalNavigation = () => {
     Taro.navigateTo({
-      url: '/pages/journal/journal' // Update with the path to your journal page
+      url: '/pages/journal/journal'
     });
   };
 
   // Function to handle navigation to the "小猫对话" page
   const handleChatNavigation = () => {
     Taro.navigateTo({
-      url: '/pages/chat/chat' // Update with the path to your chat page
+      url: '/pages/chat/chat'
     });
   };
 
+  const handleHistoryNavigation = () => {
+    Taro.navigateTo({
+      url: '/pages/diary-history/diary-history'
+    });
+  };
 
   return (
     <View className='index'>
+      <Image
+        className='oasis'
+        src={require("../../asserts/oasis.png")}
+        mode='aspectFit'
+      />
       <View className='background-image'></View>
       <View className='top-right-buttons'>
         <Button className='bag-button'>
@@ -29,7 +39,7 @@ export default function Index() {
             mode='aspectFit'
           />
         </Button>
-        <Button className='date-button'>
+        <Button className='date-button' onClick={handleHistoryNavigation}>
           <Image
             className='date'
             src={require("../../asserts/index_date.png")}

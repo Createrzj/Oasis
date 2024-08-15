@@ -8,14 +8,12 @@
     overflow: hidden;
   }
   
-  .petal {
+  .petal, .petal_2 {
     position: absolute;
     top: 500px;
     width: 300px;
     height: 300px;
-    background-image: url('../../asserts/petal.png');
     background-size: cover;
-    animation: growShrink 1s 10; /* Adjust the number of iterations as needed */
   }
   
   @keyframes growShrink {
@@ -30,14 +28,23 @@
     }
   }
   
+  .petal {
+    background-image: url('../../asserts/petal.png');
+    animation: growShrink 0.5s 10;
+  }
+
   .petal_2 {
+    background-image: url('../../asserts/petal_2.png');
+    animation: growShrink 0.5s 10;
+  }
+
+  .petal_3 {
     position: absolute;
     top: 500px;
     width: 300px;
     height: 300px;
-    background-image: url('../../asserts/petal.png');
+    background-image: url('../../asserts/petal_3.png');
     background-size: cover;
-    animation: growShrink 1s 10; /* Adjust the number of iterations as needed */
   }
 
   .counter {
@@ -47,7 +54,7 @@
     color: #333; /* Text color */
   }
 
-  .step-1-text {
+  .step-1-text, .step-2-text, .step-3-text {
     position: absolute;
     bottom: 250px;
     width: 600px;
@@ -56,7 +63,16 @@
     font-size: 30px;
   }
 
-  .step-1-image {
+  .notice {
+    position: absolute;
+    top: 250px;
+    width: 400px;
+    height: 200px;
+    background-size: cover;
+    font-size: 40px;
+  }
+
+  .step-1-image, .step-2-image, .step-3-image {
     position: absolute;
     bottom: -50px;
     width: 800px;
@@ -65,7 +81,16 @@
     z-index: -1;
   }
 
-  .nextstep {
+  .notice-image {
+    position: absolute;
+    top: 170px;
+    width: 500px;
+    height: 200px;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  .nextstep, .finish {
     position: absolute;
     bottom: 145px;
     width: 200px;

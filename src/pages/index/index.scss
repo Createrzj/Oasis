@@ -99,3 +99,22 @@
   height: 600px; /* Adjust height as needed */
   object-fit: cover; /* Adjust how the image fits in the container */
 }
+
+.oasis {
+  position: absolute;
+  top: 10px;
+  left: -100px;
+  z-index: 1;
+  animation: moveRight 3s forwards;
+}
+
+@keyframes moveRight {
+  0% {
+    left: -100px; /* Start off-screen to the left */
+    opacity: 0; /* Optional: Start with opacity 0 */
+  }
+  100% {
+    left: 0px; /* End position */
+    opacity: 1; /* Optional: End with opacity 1 */
+  }
+}

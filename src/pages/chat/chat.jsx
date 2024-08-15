@@ -80,7 +80,7 @@ export default function Chat() {
   // Function to handle navigation to the "meditation" page
   const handleMeditationNavigation = () => {
     setIsModalOpen(false); // 关闭弹窗
-    Taro.navigateTo({
+    Taro.redirectTo({
       url: '/pages/meditation/meditation' // Update with the path to your journal page
     });
   };
