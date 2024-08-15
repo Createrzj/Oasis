@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro';
-import { View, Textarea, Button, Image } from '@tarojs/components'
+import { View, Textarea, Button, Image, Text } from '@tarojs/components'
 import { useState } from 'react'
 import './chat.scss'
 
@@ -7,6 +7,7 @@ export default function Chat() {
   const [value, setValue] = useState('')
   const [conversation, setConversation] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [title, setTitle] = useState('Oasis')
 
   const handleInputChange = (e) => {
     setValue(e.target.value)
@@ -29,14 +30,23 @@ export default function Chat() {
 
   // Function to handle navigation to the "meditation" page
   const handleMeditationNavigation = () => {
-    setIsModalOpen(false); // 关闭弹窗
+    setIsModalOpen(false);
     Taro.redirectTo({
       url: '/pages/meditation/meditation' // Update with the path to your journal page
     });
   };
 
+  const handleCBTNavigation = () => {
+    setTitle('CBT');
+  };
+
+  const handleMiracleNavigation = () => {
+    setTitle('miracle');
+  };
+
   return (
     <View className='container'>
+      <Text className='title'>{title}</Text>
       <Image
         className='cat'
         src={require("../../asserts/chat_cat.png")}
@@ -44,22 +54,23 @@ export default function Chat() {
       />
       <View className='conversation'>
         {conversation.map((item, index) => (
-          <View key={index} className='message'>
+          <View key={index} className='message' autoHeight>
             <Textarea
               value={item.input}
               disabled
-              className='message-input'
+              className={`message-input input-${index}`}
               autoHeight
             />
             <Textarea
               value={item.output}
               disabled
-              className='message-output'
+              className={`message-output output-${index}`}
               autoHeight
             />
           </View>
         ))}
       </View>
+
       <View className='footer'>
         <View className='input-container'>
           <Textarea
@@ -72,15 +83,15 @@ export default function Chat() {
         </View>
       </View>
       <Button className='meditation-button' onClick={handleOpenModal}>放松训练</Button>
-      <Button className='CBT-button'>CBT认知重塑</Button>
-      <Button className='miracle-button'>奇迹问题</Button>
+      <Button className='CBT-button' onClick={handleCBTNavigation}>CBT认知重塑</Button>
+      <Button className='miracle-button' onClick={handleMiracleNavigation}>奇迹问题</Button>
 
       {isModalOpen && (
         <View className='custom-modal'>
           <Image
-          className='me_back'
-          src={require("../../asserts/me_back.png")}
-          mode='aspectFit'
+            className='me_back'
+            src={require("../../asserts/me_back.png")}
+            mode='aspectFit'
           />
           <View className='modal-content'>
             <View className='modal-body'>
