@@ -16,14 +16,14 @@ export function saveDiary(userId, diaryContent) {
 }
 
 // 定义一个函数来查询日记，并返回结果
-function queryDiary(userId, startTime, endTime) {
+export function queryDiary(userId, startTime, endTime) {
   const data = {
     user_id: userId,
     start_time: startTime,
     end_time: endTime
   };
 
-  return apiClient.get('/query-diary', { params: data })
+  return apiClient.post('/query-diary', data)
     .then(response => response.data)
     .catch(error => {
       console.error('Error querying diary:', error);

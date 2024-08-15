@@ -32,42 +32,9 @@ export default function Chat() {
         }
       } catch (error) {
         console.error('Error sending chat message:', error);
-        // 这里可以添加错误处理逻辑，比如显示错误消息给用户
       }
     }
   };
-  // const handleSubmit = async () => {
-  //   if (value.trim()) {
-  //     const newMessage = { input: value, output: '' }; // 初始输出为空
-  //     setConversation([...conversation, newMessage]); // 添加新消息到会话列表
-  //     setValue(''); // 清空输入框
-  //
-  //     // 发送消息
-  //     await sendChatMessage(1, 1, value);
-  //   }
-  // };
-  //
-  // useEffect(() => {
-  //   if (value.trim()) {
-  //     // 监听流式数据
-  //     const eventSource = new EventSource('/chat/stream');
-  //     eventSource.onmessage = (event) => {
-  //       const message = event.data;
-  //       setConversation(prev => {
-  //         return prev.map(msg =>
-  //           msg.input === value ? { ...msg, output: msg.output + message } : msg
-  //         );
-  //       });
-  //     };
-  //     eventSource.onerror = (error) => {
-  //       console.error('EventSource failed:', error);
-  //       eventSource.close();
-  //     };
-  //
-  //     // 组件卸载时关闭EventSource
-  //     return () => eventSource.close();
-  //   }
-  // }, [value]); // 依赖数组中包含value，确保每次value变化时都会重新创建EventSource
 
   const handleOpenModal = () => {
     setIsModalOpen(true); // 打开弹窗
