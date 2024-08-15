@@ -82,6 +82,7 @@ export default function DiaryHistory() {
         {diaries.map((diary) => (
           <View key={diary.id} className='diary-item'>
             <Text className='diary-date'>{diary.date}</Text>
+            <p></p>
             <Text className='diary-content'>{diary.content}</Text>
           </View>
         ))}
