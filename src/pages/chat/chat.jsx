@@ -1,3 +1,4 @@
+import Taro from '@tarojs/taro';
 import { View, Textarea, Button, Image } from '@tarojs/components'
 import { useState } from 'react'
 import './chat.scss'
@@ -6,6 +7,7 @@ import {sendChatMessage, queryChatHistory} from "../../api/chat";
 export default function Chat() {
   const [value, setValue] = useState('')
   const [conversation, setConversation] = useState([])
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleInputChange = (e) => {
     setValue(e.target.value)
@@ -35,6 +37,22 @@ export default function Chat() {
     }
   };
 
+  const handleOpenModal = () => {
+    setIsModalOpen(true); // 打开弹窗
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false); // 关闭弹窗
+  };
+
+  // Function to handle navigation to the "meditation" page
+  const handleMeditationNavigation = () => {
+    setIsModalOpen(false); // 关闭弹窗
+    Taro.navigateTo({
+      url: '/pages/meditation/meditation' // Update with the path to your journal page
+    });
+  };
+
   return (
     <View className='container'>
       <Image
@@ -49,11 +67,13 @@ export default function Chat() {
               value={item.input}
               disabled
               className='message-input'
+              autoHeight
             />
             <Textarea
               value={item.output}
               disabled
               className='message-output'
+              autoHeight
             />
           </View>
         ))}
@@ -69,6 +89,33 @@ export default function Chat() {
           <Button className='confirm-button' onClick={handleSubmit}></Button>
         </View>
       </View>
+      <Button className='meditation-button' onClick={handleOpenModal}>放松训练</Button>
+      <Button className='CBT-button'>CBT认知重塑</Button>
+      <Button className='miracle-button'>奇迹问题</Button>
+
+      {isModalOpen && (
+        <View className='custom-modal'>
+          <Image
+          className='me_back'
+          src={require("../../asserts/me_back.png")}
+          mode='aspectFit'
+          />
+          <View className='modal-content'>
+            <View className='modal-body'>
+              嗨! 感到身体因为心情而紧张不适吗？来试一试放松训练吧。
+              我们会通过深呼吸和提供特定的身体放松动作帮助你重新集中注意力，放松全身。
+            </View>
+            <View className='modal-actions'>
+              <Button className='modal-open-button' onClick={handleMeditationNavigation}>
+                进入
+              </Button>
+              <Button className='modal-close-button' onClick={handleCloseModal}>
+                返回
+              </Button>
+            </View>
+          </View>
+        </View>
+      )}
     </View>
   )
 }

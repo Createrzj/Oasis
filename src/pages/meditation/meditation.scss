@@ -1,0 +1,79 @@
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .petal {
+    position: absolute;
+    top: 500px;
+    width: 300px;
+    height: 300px;
+    background-image: url('../../asserts/petal.png');
+    background-size: cover;
+    animation: growShrink 1s 10; /* Adjust the number of iterations as needed */
+  }
+  
+  @keyframes growShrink {
+    0% {
+      transform: scale(0) rotate(0deg); /* Start from scale 0 (invisible) */
+    }
+    50% {
+      transform: scale(1.5) rotate(180deg); /* Grow to 1.5 times the size and rotate 180 degrees */
+    }
+    100% {
+      transform: scale(0) rotate(360deg); /* Shrink back to scale 0 and complete rotation */
+    }
+  }
+  
+  .petal_2 {
+    position: absolute;
+    top: 500px;
+    width: 300px;
+    height: 300px;
+    background-image: url('../../asserts/petal.png');
+    background-size: cover;
+    animation: growShrink 1s 10; /* Adjust the number of iterations as needed */
+  }
+
+  .counter {
+    position: absolute;
+    top: 100px; /* Position the counter at the top of the container */
+    font-size: 40px; /* Font size for the counter */
+    color: #333; /* Text color */
+  }
+
+  .step-1-text {
+    position: absolute;
+    bottom: 250px;
+    width: 600px;
+    height: 200px;
+    background-size: cover;
+    font-size: 30px;
+  }
+
+  .step-1-image {
+    position: absolute;
+    bottom: -50px;
+    width: 800px;
+    height: 700px;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  .nextstep {
+    position: absolute;
+    bottom: 145px;
+    width: 200px;
+    height: 70px;
+    background-size: cover;
+    background-color: rgb(226, 226, 199);
+    border: 2px solid rgb(175, 175, 175);
+    z-index: 1;
+    font-size: 30px;
+  }
+  

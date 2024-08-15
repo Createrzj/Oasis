@@ -1,0 +1,19 @@
+/* loading.scss */
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff; /* Optional: Set a background color */
+}
+
+.loading-text {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.loading-gif {
+  width: 800px; /* Adjust the size of the GIF as needed */
+  height: 800px; /* Adjust the size of the GIF as needed */
+}

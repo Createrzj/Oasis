@@ -1,53 +1,52 @@
 .container {
-  padding: 20px;
-  background-color: #fff;
-}
-
-.header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  height: 100vh;
 }
 
-.date {
+.image-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.journal {
+  width: 1200px;
+  height: 1400px;
+  object-fit: cover;
+}
+
+.submit-button {
+  position: absolute;
+  bottom: 40px;
+  z-index: 2;
+  background-color: #6fa8e5;
+  color: white;
   font-size: 18px;
-  font-weight: bold;
-}
-
-.textarea {
-  width: 100%;
-  min-height: 300px;
-  margin: 0 auto; /* 使元素水平居中 */
-  padding: 0px 10px; /* 上、右、下、左内边距 */
-  border: 2px solid #000000;
-  border-width: 3px 0px 0px 0px;
-  border-radius: 8px;
-  font-size: 20px;
-  box-sizing: border-box; /* 使 padding 和 border 包括在元素的总宽度和高度内 */
-}
-
-.textarea::before {
-  content: "";
-  display: block;
-  height: 10px; /* 使字体离边框有距离 */
-}
-
-
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.word-count {
-  font-size: 20px;
-  color: #999;
-}
-
-.save-button {
-  background-color: #333;
-  color: #fff;
   padding: 10px 20px;
   border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:active {
+  background-color: #99b8d7;
+}
+
+.input-journal {
+  width: 500px;
+  min-height: 780px;
+  max-height: 780px;
+  position: absolute;
+  bottom: 150px;  
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 30px;
+  overflow-y: auto;
 }
