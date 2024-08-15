@@ -20,6 +20,11 @@ export default function Index() {
 
   return (
     <View className='index'>
+      <Image
+        className='oasis'
+        src={require("../../asserts/oasis.png")}
+        mode='aspectFit'
+      />
       <View className='background-image'></View>
       <View className='top-right-buttons'>
         <Button className='bag-button'>
