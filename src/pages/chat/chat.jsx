@@ -9,6 +9,8 @@ export default function Chat() {
   const [value, setValue] = useState('')
   const [conversation, setConversation] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isSocratesModalOpen, setIsSocratesModalOpen] = useState(false)
+  const [isCBTModalOpen, setIsCBTModalOpen] = useState(false)
 
   const handleInputChange = (e) => {
     setValue(e.target.value)
@@ -42,6 +44,22 @@ export default function Chat() {
 
   const handleCloseModal = () => {
     setIsModalOpen(false); // 关闭弹窗
+  };
+
+  const handleOpenSocratesModal = () => {
+    setIsSocratesModalOpen(true); // 打开苏格拉底弹窗
+  };
+
+  const handleCloseSocratesModal = () => {
+    setIsSocratesModalOpen(false); // 关闭苏格拉底弹窗
+  };
+
+  const handleOpenCBTModal = () => {
+    setIsCBTModalOpen(true); // 打开CBT弹窗
+  };
+
+  const handleCloseCBTModal = () => {
+    setIsCBTModalOpen(false); // 关闭CBT弹窗
   };
 
   // Function to handle navigation to the "meditation" page
@@ -129,8 +147,8 @@ export default function Chat() {
         </View>
       </View>
       <Button className='meditation-button' onClick={handleOpenModal}>放松训练</Button>
-      <Button className='CBT-button' onClick={handleCBT}>CBT认知重塑</Button>
-      <Button className='miracle-button' onClick={handleMaricle}>奇迹问题</Button>
+      <Button className='CBT-button' onClick={handleOpenCBTModal}>CBT认知重塑</Button>
+      <Button className='miracle-button' onClick={handleOpenSocratesModal}>苏格拉底</Button>
 
       {isModalOpen && (
         <View className='custom-modal'>
@@ -149,6 +167,54 @@ export default function Chat() {
                 进入
               </Button>
               <Button className='modal-close-button' onClick={handleCloseModal}>
+                返回
+              </Button>
+            </View>
+          </View>
+        </View>
+      )}
+
+      {isSocratesModalOpen && (
+        <View className='custom-modal'>
+          <Image
+            className='me_back'
+            src={require("../../asserts/me_back.png")}
+            mode='aspectFit'
+          />
+          <View className='modal-content'>
+            <View className='modal-body'>
+              苏格拉底方法是一种通过提问来引导思考和自我发现的对话技巧。
+              通过一系列精心设计的问题，帮助你更深入地理解问题，并找到解决方案。
+            </View>
+            <View className='modal-actions'>
+              <Button className='modal-open-button' onClick={handleCloseSocratesModal}>
+                进入
+              </Button>
+              <Button className='modal-close-button' onClick={handleCloseSocratesModal}>
+                返回
+              </Button>
+            </View>
+          </View>
+        </View>
+      )}
+
+      {isCBTModalOpen && (
+        <View className='custom-modal'>
+          <Image
+            className='me_back'
+            src={require("../../asserts/me_back.png")}
+            mode='aspectFit'
+          />
+          <View className='modal-content'>
+            <View className='modal-body'>
+              CBT认知重塑是一种心理治疗方法，通过识别和改变负面思维模式来改善情绪和行为。
+              我们将帮助你识别和挑战不合理的信念，并培养更健康的思维方式。
+            </View>
+            <View className='modal-actions'>
+              <Button className='modal-open-button' onClick={handleCloseCBTModal}>
+                进入
+              </Button>
+              <Button className='modal-close-button' onClick={handleCloseCBTModal}>
                 返回
               </Button>
             </View>
