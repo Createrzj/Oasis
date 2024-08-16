@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro';
-import { View, Textarea, Button, Image } from '@tarojs/components'
+import { View, Text, Textarea, Button, Image } from '@tarojs/components'
 import {useState} from 'react'
 import './chat.scss'
 import {sendCBTChatMessage, sendChatMessage, sendMiracleQuestionChatMessage} from "../../api/chat";
@@ -20,16 +20,15 @@ export default function Chat() {
       setValue(''); // 清空输入框
 
       try {
-        // 调用API接口发送消息，并等待响应
         const response = await sendChatMessage(1, 1, value);
-        if (response) {
-          // 如果API调用成功，更新会话列表中的输出
-          setConversation(prevConversation =>
-            prevConversation.map(msg =>
-              msg.input === value ? { ...msg, output: response } : msg
-            )
-          );
-        }
+
+        console.log("get response", response)
+
+        setConversation(prevConversation =>
+          prevConversation.map(msg =>
+            msg.input === value ? { ...msg, output: response } : msg
+          )
+        );
       } catch (error) {
         console.error('Error sending chat message:', error);
       }
@@ -97,7 +96,6 @@ export default function Chat() {
         }
       } catch (error) {
         console.error('Error sending chat message:', error);
-        // 这里可以添加错误处理逻辑，比如显示错误消息给用户
       }
     }
   };
@@ -112,20 +110,13 @@ export default function Chat() {
       <View className='conversation'>
         {conversation.map((item, index) => (
           <View key={index} className='message'>
-            <Textarea
-              value={item.input}
-              disabled
-              style={{ width: '150px', height: '50px' }}
-              className='message-input'
-              autoHeight
-            />
-            <Textarea
-              value={item.output}
-              disabled
-              style={{ width: '150px', height: '50px' }}
-              className='message-output'
-              autoHeight
-            />
+            <Text className='message-input'>
+              {item.input}
+            </Text>
+            <View style={{margin: '10rem'}}></View>
+            <Text className='message-output'>
+              {item.output}
+            </Text>
           </View>
         ))}
       </View>

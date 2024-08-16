@@ -10,7 +10,10 @@ export function sendChatMessage(conversationId, userId, userInput) {
   };
 
   return apiClient.post('/chat', data)
-    .then(response => response.data)
+    .then(response => {
+      console.log('Response from server:', response)
+      return response.data;
+    })
     .catch(error => {
       console.error('Error sending chat message:', error);
       return null;

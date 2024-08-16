@@ -15,87 +15,11 @@
   padding: 10px;
   background-color: transparent;
 }
-
-.conversation {
-  width: 600px;
-  height: 750px;
-  position: absolute;
-  top: 100px;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  background-color: transparent;
-  border: 1px solid #000000;
-  border-radius: 50px;
-  overflow-y: auto;
-}
-
-.message {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 10vh;
-  margin-bottom: 20px;
-}
-
-.message-input {
-  position: absolute;
-  min-width: none;
-  max-width: 500px;
-  height: 50px;
-  min-height: 50px;
-  padding: 10px;
-  top: 30px;
-  right: 20px; 
-  border: 1px solid #000;
-  border-radius: 20px;
-  background-color: #f0f0f0;
-  font-size: 20px;
-  line-height: 1.5;
-  box-sizing: border-box;
-}
-
-.message-output {
-  position: absolute;
-  min-width: none;
-  max-width: 500px;
-  height: 50px;
-  min-height: 50px;
-  top: 70px; /* 输出框的位置与输入框的底部对齐 */
-  left: 10px; /* 调整输出框距离输入框的水平位置 */
-  padding: 10px;
-  border: 1px solid #000;
-  border-radius: 20px;
-  background-color: #e6e6e6;
-  font-size: 20px;
-  line-height: 1.5;
-  box-sizing: border-box;
-}
-
 .input-container {
   position: relative;
   width: 100%;
   max-width: 600px;
 }
-
-.input-textarea {
-  width: 600px;
-  min-height: 100px;
-  max-height: 100px;
-  padding-right: 90px;
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border: 1px solid #000;
-  border-radius: 50px;
-  background-color: #ffffff;
-  font-size: 30px;
-  line-height: 1.5;
-  box-sizing: border-box;
-  overflow-y: auto;
-}
-
 .confirm-button {
   position: absolute;
   right: 10px;
@@ -115,9 +39,85 @@
   background-color: #99b8d7;
 }
 
+.conversation {
+  width: 600px;
+  height: 750px;
+  position: absolute;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid #000000;
+  border-radius: 50px;
+  overflow-y: auto;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.message {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 10vh;
+  margin-bottom: 20px;
+}
+
+.message-input {
+  position: absolute;
+  max-width: 500px;
+  //height: 50px;
+  min-height: 50px;
+  padding: 10px;
+  top: 30px;
+  right: 20px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  font-size: 20px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.message-output {
+  position: absolute;
+  max-width: 500px;
+  //height: 50px;
+  //min-height: 50px;
+  top: 70px; /* 输出框的位置与输入框的底部对齐 */
+  left: 10px; /* 调整输出框距离输入框的水平位置 */
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  background-color: #e6e6e6;
+  font-size: 20px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+
+.input-textarea {
+  width: 600px;
+  min-height: 100px;
+  max-height: 100px;
+  padding-right: 90px;
+  padding-left: 20px;
+  //padding-top: 10px;
+  //padding-bottom: 0.2rem;
+  border: 1px solid #000;
+  border-radius: 50px;
+  background-color: #ffffff;
+  font-size: 30px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+
 .cat {
   position: absolute;
-  top: 800px;
+  //top: 800px;
+  bottom: 2rem;
   left: 10px;
   width: 400px;
   height: 400px;
