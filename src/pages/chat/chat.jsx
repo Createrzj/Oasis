@@ -85,14 +85,13 @@ export default function Chat() {
       try {
         // 调用API接口发送消息，并等待响应
         const response = await sendMiracleQuestionChatMessage(2, 2, value);
-        if (response) {
-          // 如果API调用成功，更新会话列表中的输出
-          setConversation(prevConversation =>
-            prevConversation.map(msg =>
-              msg.input === value ? { ...msg, output: response } : msg
-            )
-          );
-        }
+
+        setConversation(prevConversation =>
+          prevConversation.map(msg =>
+            msg.input === value ? { ...msg, output: response } : msg
+          )
+        );
+
       } catch (error) {
         console.error('Error sending chat message:', error);
       }
@@ -112,7 +111,6 @@ export default function Chat() {
             <Text className='message-input'>
               {item.input}
             </Text>
-            <View style={{ margin: '10rem' }}></View>
             <View className='message-output'>
               <ReactMarkdown>{item.output}</ReactMarkdown>
             </View>

@@ -59,14 +59,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 10vh;
-  margin-bottom: 20px;
+  height: auto; /* Adjusted to auto to fit content */
+  margin-bottom: 40px; /* Increased margin for more spacing */
 }
 
 .message-input {
   position: absolute;
   max-width: 500px;
-  //height: 50px;
   min-height: 50px;
   padding: 10px;
   top: 30px;
@@ -80,13 +79,14 @@
 }
 
 .message-output {
-  position: absolute;
+  position: relative;
   max-width: 500px;
-  //height: 50px;
-  //min-height: 50px;
+  margin-top: 0.7rem;
+  margin-left: -1rem;
+  margin-bottom: 0.7rem;
   top: 70px; /* 输出框的位置与输入框的底部对齐 */
   left: 10px; /* 调整输出框距离输入框的水平位置 */
-  padding: 10px;
+  padding: 1rem;
   border: 1px solid #000;
   border-radius: 20px;
   background-color: #e6e6e6;
@@ -95,15 +95,12 @@
   box-sizing: border-box;
 }
 
-
 .input-textarea {
   width: 600px;
   min-height: 100px;
   max-height: 100px;
   padding-right: 90px;
   padding-left: 20px;
-  //padding-top: 10px;
-  //padding-bottom: 0.2rem;
   border: 1px solid #000;
   border-radius: 50px;
   background-color: #ffffff;
@@ -113,10 +110,8 @@
   overflow-y: auto;
 }
 
-
 .cat {
   position: absolute;
-  //top: 800px;
   bottom: 2rem;
   left: 10px;
   width: 400px;
