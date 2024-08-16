@@ -1,8 +1,9 @@
 import Taro from '@tarojs/taro';
 import { View, Text, Textarea, Button, Image } from '@tarojs/components'
-import {useState} from 'react'
+import { useState } from 'react'
+import ReactMarkdown from 'react-markdown'
 import './chat.scss'
-import {sendCBTChatMessage, sendChatMessage, sendMiracleQuestionChatMessage} from "../../api/chat";
+import { sendCBTChatMessage, sendChatMessage, sendMiracleQuestionChatMessage } from "../../api/chat";
 
 export default function Chat() {
   const [value, setValue] = useState('')
@@ -51,7 +52,6 @@ export default function Chat() {
     });
   };
 
-
   const handleCBT = async () => {
     if (value.trim()) {
       const newMessage = { input: value, output: '' }; // 初始输出为空
@@ -75,7 +75,6 @@ export default function Chat() {
       }
     }
   };
-
 
   const handleMaricle = async () => {
     if (value.trim()) {
@@ -113,10 +112,10 @@ export default function Chat() {
             <Text className='message-input'>
               {item.input}
             </Text>
-            <View style={{margin: '10rem'}}></View>
-            <Text className='message-output'>
-              {item.output}
-            </Text>
+            <View style={{ margin: '10rem' }}></View>
+            <View className='message-output'>
+              <ReactMarkdown>{item.output}</ReactMarkdown>
+            </View>
           </View>
         ))}
       </View>
