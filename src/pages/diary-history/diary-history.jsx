@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { View, Text } from '@tarojs/components';
+import ReactMarkdown from 'react-markdown';
 import './diary-history.scss';
 import { queryDiary } from '../../api/journal';
 import {getChatSummarize} from "../../api/chat";
@@ -92,7 +93,8 @@ export default function DiaryHistory() {
         <Text className='section-title'>总结报告</Text>
         {summaries.map((summary) => (
           <View key={summary} className='summary-item'>
-            <Text className='summary-content'>{summary}</Text>
+            {/*<Text className='summary-content'>{summary}</Text>*/}
+            <ReactMarkdown className='summary-content'>{summary}</ReactMarkdown>
           </View>
         ))}
       </View>

@@ -64,24 +64,25 @@
 }
 
 .message-input {
-  position: absolute;
+  position: relative;
   max-width: 500px;
   min-height: 50px;
   padding: 10px;
   top: 30px;
-  right: 20px;
+  right: -3rem;
   border: 1px solid #000;
   border-radius: 20px;
   background-color: #f0f0f0;
   font-size: 20px;
   line-height: 1.5;
   box-sizing: border-box;
+  //text-align: right;
 }
 
 .message-output {
   position: relative;
   max-width: 500px;
-  margin-top: 0.7rem;
+  //margin-top: 0.7rem;
   margin-left: -1rem;
   margin-bottom: 0.7rem;
   top: 70px; /* 输出框的位置与输入框的底部对齐 */
@@ -89,7 +90,7 @@
   padding: 1rem;
   border: 1px solid #000;
   border-radius: 20px;
-  background-color: #e6e6e6;
+  background-color: #c6c2c2;
   font-size: 20px;
   line-height: 1.5;
   box-sizing: border-box;
