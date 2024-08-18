@@ -1,52 +1,52 @@
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
 }
 
 .image-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
 .journal {
-  width: 1200px;
-  height: 1400px;
-  object-fit: cover;
+   width: 1200px;
+   height: 1400px;
+   object-fit: cover;
 }
 
 .submit-button {
-  position: absolute;
-  bottom: 40px;
-  z-index: 2;
-  background-color: #6fa8e5;
-  color: white;
-  font-size: 18px;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+   position: absolute;
+   bottom: 40px;
+   z-index: 2;
+   background-color: #6fa8e5;
+   color: white;
+   font-size: 18px;
+   padding: 10px 20px;
+   border-radius: 8px;
+   border: none;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
 }
 
 .submit-button:active {
-  background-color: #99b8d7;
+   background-color: #99b8d7;
 }
 
 .input-journal {
-  width: 500px;
-  min-height: 780px;
-  max-height: 780px;
-  position: absolute;
-  bottom: 150px;  
-  z-index: 1;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 30px;
-  overflow-y: auto;
+   width: 500px;
+   min-height: 780px;
+   max-height: 780px;
+   position: absolute;
+   bottom: 150px;
+ z-index: 1;
+   background-color: rgba(255, 255, 255, 0.8);
+   padding: 20px;
+   border-radius: 8px;
+   border: 1px solid #ccc;
+   font-size: 30px;
+   overflow-y: auto;
 }
