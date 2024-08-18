@@ -11,6 +11,7 @@ export default function Chat() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isSocratesModalOpen, setIsSocratesModalOpen] = useState(false)
   const [isCBTModalOpen, setIsCBTModalOpen] = useState(false)
+  const [title, setTitle] = useState('Oasis')
 
   const handleInputChange = (e) => {
     setValue(e.target.value)
@@ -64,13 +65,16 @@ export default function Chat() {
 
   // Function to handle navigation to the "meditation" page
   const handleMeditationNavigation = () => {
-    setIsModalOpen(false); // 关闭弹窗
+    setIsModalOpen(false);
     Taro.redirectTo({
       url: '/pages/meditation/meditation' // Update with the path to your journal page
     });
   };
 
+
   const handleCBT = async () => {
+    setTitle('CBT');
+    
     if (value.trim()) {
       const newMessage = { input: value, output: '' }; // 初始输出为空
       setConversation([...conversation, newMessage]); // 添加新消息到会话列表
@@ -95,6 +99,8 @@ export default function Chat() {
   };
 
   const handleMaricle = async () => {
+    setTitle('miracle');
+    
     if (value.trim()) {
       const newMessage = { input: value, output: '' }; // 初始输出为空
       setConversation([...conversation, newMessage]); // 添加新消息到会话列表
@@ -118,6 +124,7 @@ export default function Chat() {
 
   return (
     <View className='container'>
+      <Text className='title'>{title}</Text>
       <Image
         className='cat'
         src={require("../../asserts/chat_cat.png")}
@@ -135,6 +142,7 @@ export default function Chat() {
           </View>
         ))}
       </View>
+
       <View className='footer'>
         <View className='input-container'>
           <Textarea
