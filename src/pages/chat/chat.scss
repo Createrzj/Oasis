@@ -72,9 +72,8 @@
   right: -3rem;
   border: 1px solid #000;
   border-radius: 20px;
-  background-color: #f0f0f0;
-  font-size: 20px;
-  line-height: 1.5;
+  background-color: #ffffff;
+  font-size: 30px;
   box-sizing: border-box;
   //text-align: right;
 }
@@ -120,15 +119,20 @@
   object-fit: cover;
 }
 
-.meditation-button, .CBT-button, .miracle-button {
+.meditation-button,
+.CBT-button,
+.miracle-button {
   position: absolute;
   bottom: 250px;
   width: 250px;
   height: 50px;
-  align-items: center; /* 垂直居中 */
-  justify-content: center; /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
+  justify-content: center;
+  /* 水平居中 */
   font-size: 30px;
-  border-radius: 25px; /* 圆弧边框 */
+  border-radius: 25px;
+  /* 圆弧边框 */
   display: flex;
   background-color: #87caf4;
   transition: transform 0.1s ease-in-out;
@@ -147,7 +151,8 @@
 }
 
 .meditation-button:active {
-  transform: scale(0.95); /* 点击时按钮缩小 */
+  transform: scale(0.95);
+  /* 点击时按钮缩小 */
 }
 
 .custom-modal {
@@ -159,25 +164,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000; /* Ensure the modal is on top */
+  z-index: 1000;
+  /* Ensure the modal is on top */
 }
 
 .me_back {
-  position: absolute; /* Cover the entire modal */
+  position: absolute;
+  /* Cover the entire modal */
   top: -150px;
   left: 0;
   width: 100%;
   height: 100%;
   display: flex;
-  object-fit: cover; /* Make sure the image covers the entire area */
-  z-index: -1; /* Place it behind the content */
+  object-fit: cover;
+  /* Make sure the image covers the entire area */
+  z-index: -1;
+  /* Place it behind the content */
 }
 
 .modal-content {
-  position: relative; /* Ensure it's on top of the background image */
+  position: relative;
+  /* Ensure it's on top of the background image */
   width: 500px;
   height: 500px;
-  background-color: transparent; /* Semi-transparent background for content */
+  background-color: transparent;
+  /* Semi-transparent background for content */
   border-radius: 10px;
   overflow: hidden;
 }
@@ -196,7 +207,8 @@
 
 .modal-close-button,
 .modal-open-button {
-  width: 48%; /* Each button takes up nearly half the available width */
+  width: 48%;
+  /* Each button takes up nearly half the available width */
   padding: 10px;
   text-align: center;
   color: #fff;
@@ -207,9 +219,16 @@
 }
 
 .modal-close-button {
-  background-color: #ccc; /* Different color for the "返回" button */
+  background-color: #ccc;
+  /* Different color for the "返回" button */
 }
 
 .modal-open-button {
-  background-color: #007aff; /* Color for the "进入" button */
+  background-color: #007aff;
+  /* Color for the "进入" button */
+}
+
+.title {
+  position: absolute;
+  top: 20px;
 }

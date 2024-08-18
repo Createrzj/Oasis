@@ -5,7 +5,7 @@ export default defineAppConfig({
     'pages/chat/chat',
     'pages/journal/journal',
     'pages/meditation/meditation',
-    'pages/diary-history/diary-history'
+    'pages/diary-history/diary-history',
   ],
   window: {
     backgroundTextStyle: 'light',
