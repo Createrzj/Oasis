@@ -11,6 +11,7 @@ export default function Chat() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isSocratesModalOpen, setIsSocratesModalOpen] = useState(false)
   const [isCBTModalOpen, setIsCBTModalOpen] = useState(false)
+  const [flag, setFlag] = useState(true)
   const [title, setTitle] = useState('Oasis')
 
   const handleInputChange = (e) => {
@@ -41,6 +42,7 @@ export default function Chat() {
 
   const handleOpenModal = () => {
     setIsModalOpen(true); // 打开弹窗
+    setFlag(false);
   };
 
   const handleCloseModal = () => {
@@ -49,6 +51,7 @@ export default function Chat() {
 
   const handleOpenSocratesModal = () => {
     setIsSocratesModalOpen(true); // 打开苏格拉底弹窗
+    setFlag(false);
   };
 
   const handleCloseSocratesModal = () => {
@@ -57,6 +60,7 @@ export default function Chat() {
 
   const handleOpenCBTModal = () => {
     setIsCBTModalOpen(true); // 打开CBT弹窗
+    setFlag(false);
   };
 
   const handleCloseCBTModal = () => {
@@ -136,9 +140,11 @@ export default function Chat() {
             <Text className='message-input'>
               {item.input}
             </Text>
-            <View className='message-output'>
-              <ReactMarkdown>{item.output}</ReactMarkdown>
-            </View>
+            {item.output && (
+              <View className='message-output'>
+                <ReactMarkdown>{item.output}</ReactMarkdown>
+              </View>
+            )}
           </View>
         ))}
       </View>
@@ -154,9 +160,14 @@ export default function Chat() {
           <Button className='confirm-button' onClick={handleSubmit}></Button>
         </View>
       </View>
-      <Button className='meditation-button' onClick={handleOpenModal}>放松训练</Button>
-      <Button className='CBT-button' onClick={handleOpenCBTModal}>CBT认知重塑</Button>
-      <Button className='miracle-button' onClick={handleOpenSocratesModal}>苏格拉底</Button>
+      {flag &&
+      <>
+        <Button className='meditation-button' onClick={handleOpenModal}>放松训练</Button>
+        <Button className='CBT-button' onClick={handleOpenCBTModal}>CBT认知重塑</Button>
+        <Button className='miracle-button' onClick={handleOpenSocratesModal}>苏格拉底</Button>
+      </>
+      }
+
 
       {isModalOpen && (
         <View className='custom-modal'>
